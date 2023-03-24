@@ -5,9 +5,16 @@
 {% endblock %}
 
 {% block content %}
-     <h1>Book page</h1>
+    <h1>Book page</h1>
     {% for book in books %}
-        <h4>{{book.title}}</h4>
+        <h4>{{ book.title }}</h4>
+        <p> text : {{ book.content }}</p>
+        <button class="btn btn-success" type="submit"><a href="{% url 'Book_detail_view' book.id %}">
+            Read More</a> </button>
     {% endfor %}
+    <br>
+
+    <br>
+   <button class="text" type="submit"><a href="{% url 'Book_create_View'%}">Add Book</a> </button>
 
 {% endblock %}
