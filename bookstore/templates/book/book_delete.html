@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block page_title %}
+    delete {{ Book.title }}
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        <h1>Delete {{ Book.title |capfirst }}</h1>
+        <p>Are you sure to delete {{ Book.title }} ?</p>
+        <input type="button" class="btn btn-danger" value="Yes, Im Sure">
+    </form>
+    <br>
+    <a href="{% url 'Book_list_view' %}">Book List</a>
+
+
+{% endblock %}

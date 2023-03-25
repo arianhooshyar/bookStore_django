@@ -6,12 +6,12 @@
 
 {% block content %}
     <h1>Create Book :</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button  class="btn btn-success"  type="submit">Add book</button>
 
-    <h4>name : {{ book.title }}</h4>
-    <h3> text : {{ book.content }}</h3>
-    <h5>author : {{ book.author }}</h5>
-    <h6>price : {{ book.price }}</h6>
-
+    </form>
 
 
 {% endblock %}

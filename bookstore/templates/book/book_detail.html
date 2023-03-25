@@ -11,6 +11,14 @@
     <h3> text : {{ book.content }}</h3>
     <h5>author : {{ book.author }}</h5>
     <h6>price : {{ book.price }}</h6>
+    <button class="btn btn-info" type="submit"><a href="{% url 'Book_update_view' book.id %}">
+            Update</a> </button>
+    <button class="btn btn-info" type="submit"><a href="{% url 'Book_delete_view' book.id %}">
+            Delete</a> </button>
+
+
+
+
 
 
 
