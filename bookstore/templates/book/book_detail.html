@@ -7,14 +7,21 @@
 {% block content %}
     <h1>Book detail :</h1>
 
+    {% if book.cover %}
+
+       {{ book.cover}}
+    {% else %}
+        <h1>asdfghjk</h1>
+    {% endif %}
+
     <h4>name : {{ book.title }}</h4>
     <h3> text : {{ book.content }}</h3>
     <h5>author : {{ book.author }}</h5>
     <h6>price : {{ book.price }}</h6>
     <button class="btn btn-info" type="submit"><a href="{% url 'Book_update_view' book.id %}">
-            Update</a> </button>
+        Update</a></button>
     <button class="btn btn-info" type="submit"><a href="{% url 'Book_delete_view' book.id %}">
-            Delete</a> </button>
+        Delete</a></button>
 
 
 

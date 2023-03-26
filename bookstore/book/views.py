@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 
 class BookListView(generic.ListView):
     model = Book
+    paginate_by = 2
     template_name = 'book/book_list_view.html'
     context_object_name = 'books'
 
@@ -17,7 +18,7 @@ class BookDetailView(generic.DetailView):
 
 class BookCreateView(generic.CreateView):
     model = Book
-    fields = ['title', 'author', 'price']
+    fields = ['title', 'author', 'content', 'price', 'cover']
     template_name = 'book/book_create.html'
 
 
