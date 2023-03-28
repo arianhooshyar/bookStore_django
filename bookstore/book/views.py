@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Book
+from .models import Book, Comment
 from django.views import generic
 from django.urls import reverse_lazy
 
@@ -33,3 +33,9 @@ class BookDeleteView(generic.DeleteView):
     fields = ['title', 'author', 'price']
     template_name = 'book/book_update.html'
     success_url = reverse_lazy('Book_list_view')
+
+
+class BookAddCommentView(generic.CreateView):
+    model = Comment
+    fields = ['text']
+    template_name = 'book/book_comment.html'
